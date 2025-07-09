@@ -109,3 +109,57 @@ person6.name = "Plague2"
 console.log(person6.name)
 person6.bank = "333333"
 console.log(person6.bank)
+
+// Herencia
+
+class Animal {
+    constructor(name) {
+        this.name = name
+    }
+    speak() {
+        console.log(`${this.name} hace un sonido`)
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} ladra`)
+    }
+    run() {
+        console.log(`${this.name} corre`)
+    }
+}
+
+let myDog = new Dog("Cliford")
+myDog.speak()
+myDog.run()
+
+class Fish extends Animal {
+    constructor(name, size) {
+        super(name)
+        this.size = size
+    }
+    speak() {
+        super.speak()
+    }
+    swim() {
+        console.log(`${this.name} nata`)
+    }
+}
+
+let myFish = new Fish("Nemo", "pequeño")
+myFish.swim()
+myFish.speak()
+
+// Métodos estáticos
+
+class MathOperations {
+    static sum(a, b) {
+        return a + b
+    }
+}
+
+console.log(MathOperations.sum(5, 5))
+// No buscamos instanciarla
+// let result = MathOperations.sum(2, 2)
+// console.log(result)
