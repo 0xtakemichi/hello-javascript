@@ -36,4 +36,14 @@ const handler = {
     }
 }
 handler.greeting()
-handler.arrowGreeting()
+handler.arrowGreeting();
+
+// IIFE (Immediately Invoked Function Expression)
+// Expresión de función invocada inmediatamente
+(function() {
+    console.log('IIFE clásico')
+})();
+
+(() => {
+    console.log('IIFE con arrow function')
+})();
