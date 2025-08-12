@@ -47,3 +47,22 @@ handler.arrowGreeting();
 (() => {
     console.log('IIFE con arrow function')
 })();
+
+// Parámetros Rest (...)
+function sum(...numbers) {
+    let result = 0
+    for (let number of numbers) {
+        result += number
+    }
+    return result
+}
+console.log(sum(1, 2, 3, 4, 5))
+
+function sum2(...numbers) {
+    return numbers.reduce((acc, curr) => acc + curr, 0)
+}
+// Parámetros Rest con destructuración
+function sumWithDestructuring(...numbers) {
+    const [first, second, ...rest] = numbers
+    return first + second + rest.reduce((acc, curr) => acc + curr, 0)
+}
