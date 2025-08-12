@@ -94,3 +94,13 @@ const counter = createCounter()
 counter()
 counter()
 counter()
+
+// Recursividad
+// Permite que una función se llame a sí misma
+function factorial(n){
+    if (n == 1){
+        return 1
+    }
+    return n * factorial(n - 1)
+}
+console.log(factorial(5))
