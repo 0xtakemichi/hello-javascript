@@ -66,3 +66,17 @@ function sumWithDestructuring(...numbers) {
     const [first, second, ...rest] = numbers
     return first + second + rest.reduce((acc, curr) => acc + curr, 0)
 }
+
+// Spread Operator (...)
+const numbers = [1, 2, 3, 4, 5]
+function sumWithSpread(a, b, c) {
+    return a + b + c
+}
+console.log(sumWithSpread(...numbers))
+
+// Spread Operator con objetos
+const person = { name: 'Takemichi', age: 18 }
+function greetPerson({ name, age }) {
+    console.log(`Hola, ${name}. Tienes ${age}.`)
+}
+greetPerson({ ...person })
