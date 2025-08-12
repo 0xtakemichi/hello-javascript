@@ -80,3 +80,17 @@ function greetPerson({ name, age }) {
     console.log(`Hola, ${name}. Tienes ${age}.`)
 }
 greetPerson({ ...person })
+
+// Closures (Clausuras)
+// Permiten que una función acceda a su contexto léxico incluso cuando se invoca fuera de ese contexto
+function createCounter() {
+    let count = 0
+    return function() {
+        count++
+        console.log(count)
+    }
+}
+const counter = createCounter()
+counter()
+counter()
+counter()
