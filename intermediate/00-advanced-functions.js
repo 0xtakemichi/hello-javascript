@@ -114,3 +114,19 @@ function partialSum(a) {
 const sumWith = partialSum(10)
 console.log(sumWith(5, 15))
 console.log(sumWith(5, 5))
+
+// Currying
+// Función que toma un argumento y devuelve otra función que toma el siguiente argumento
+function currySum(a) {
+    return function(b) {
+        return function(c) {
+            return function (d) {
+                return sum(a, b, c, d)
+            }
+        }
+    }
+}
+const sumAB = currySum(10)(5)
+const sumC = sumAB(10)
+console.log(sumC(5))
+console.log(sumAB(5)(20))
