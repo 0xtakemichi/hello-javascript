@@ -104,3 +104,13 @@ function factorial(n){
     return n * factorial(n - 1)
 }
 console.log(factorial(5))
+
+// Funciones parciales
+function partialSum(a) {
+    return function(b, c){
+        return sum(a, b, c)
+    }
+}
+const sumWith = partialSum(10)
+console.log(sumWith(5, 15))
+console.log(sumWith(5, 5))
