@@ -130,3 +130,21 @@ const sumAB = currySum(10)(5)
 const sumC = sumAB(10)
 console.log(sumC(5))
 console.log(sumAB(5)(20))
+
+// Callbacks
+function processData(data, callback) {
+    const result = sum(...data)
+    callback(result)
+}
+
+function processResult(result){
+    console.log(result)
+}
+function processResult2(result){
+    console.log(`El resultado es: ${result}`)
+}
+processData([1, 2, 3, 6], processResult)
+processData([1, 2, 3, 6], processResult2)
+processData([1, 2, 3, 6], (result) => {
+    console.log(`El resultado con arrow function es: ${result}`)
+})
