@@ -47,3 +47,18 @@ console.log(deepFlatArray)
 let phrases = ['hello world', 'lorem ipsum']
 let words = phrases.flatMap(phrase => phrase.split(' '))
 console.log(words)
+
+// - Ordenación
+
+// sort
+let unsorted = [5, 3, 8, 1, 2]
+let sorted = unsorted.sort((a, b) => a - b)
+console.log(sorted)
+
+let unsortedLetters = ['e', 'd', 'c', 'b', 'a']
+let sortedLetters = unsortedLetters.sort()
+console.log(sortedLetters)
+
+//reverse
+sorted.reverse()
+console.log(sorted)
