@@ -33,3 +33,17 @@ console.log(sum)
 
 let concatenated = strings.reduce((previous, current) => previous + ' ' + current)
 console.log(concatenated)
+
+// - Manipulación
+
+// flat
+let nestedArray = [1, [2,[3,[4]]]]
+let flatArray = nestedArray.flat()
+console.log(flatArray)
+let deepFlatArray = nestedArray.flat(3)
+console.log(deepFlatArray)
+
+// flatMap
+let phrases = ['hello world', 'lorem ipsum']
+let words = phrases.flatMap(phrase => phrase.split(' '))
+console.log(words)
