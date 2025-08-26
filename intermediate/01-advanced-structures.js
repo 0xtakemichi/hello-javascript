@@ -77,3 +77,36 @@ console.log(firstEven)
 // findIndex
 let firstEvenIndex = sorted.findIndex(element => element % 2 === 0)
 console.log(firstEvenIndex)
+
+// Sets avanzados
+
+// - Operaciones
+
+// Eliminación de duplicados
+let numbersArray = [1, 1, 2, 2, 3, 3, 4, 4]
+const numbersSet = new Set(numbersArray)
+numbersArray = [...new Set(numbersArray)]
+console.log(numbersSet)
+console.log(numbersArray)
+
+// Unión
+const setA = new Set([1, 2, 3])
+const setB = new Set([2, 3, 4, 5])
+const union = new Set([...setA, ...setB])
+console.log(union)
+
+// Intersección
+const intersection = new Set([...setA].filter(element => setB.has(element)))
+console.log(intersection)
+
+const palabras = ['hola', 'mundo', 'hola', 'estudio', 'me gusta', 'javascript']
+const palabras2 = ['hola', 'mundo', 'no me gusta', 'estudio', 'javascript']
+const intersectionStrings = new Set([...palabras].filter(element => palabras2.includes(element)))
+console.log(intersectionStrings)
+
+// Diferencia
+const difference = new Set([...setA].filter(element => !setB.has(element)))
+console.log(difference)
+
+const differenceStrings = new Set([...palabras].filter(element => !palabras2.includes(element)))
+console.log(differenceStrings)
