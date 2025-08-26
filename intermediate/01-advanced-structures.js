@@ -62,3 +62,18 @@ console.log(sortedLetters)
 //reverse
 sorted.reverse()
 console.log(sorted)
+
+// - Búsqueda
+
+// includes
+console.log(sorted.includes(4))
+console.log(sorted.includes(5))
+
+// find
+// entrega el primer elemento encontrado, no como filter
+let firstEven = sorted.find(element => element > 2)
+console.log(firstEven)
+
+// findIndex
+let firstEvenIndex = sorted.findIndex(element => element % 2 === 0)
+console.log(firstEvenIndex)
