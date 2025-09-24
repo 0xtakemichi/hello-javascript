@@ -110,3 +110,11 @@ console.log(difference)
 
 const differenceStrings = new Set([...palabras].filter(element => !palabras2.includes(element)))
 console.log(differenceStrings)
+
+// Conversión
+console.log([...setA])
+
+// Iteración
+
+//forEach
+setA.forEach(element => console.log(element))
