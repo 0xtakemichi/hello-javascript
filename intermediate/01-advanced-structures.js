@@ -118,3 +118,28 @@ console.log([...setA])
 
 //forEach
 setA.forEach(element => console.log(element))
+
+// Maps avanzados
+
+// - Iteración
+let myMap = new Map([
+    ['name', 'Felipe'],
+    ['age', 20],
+    ['city', 'Santiago'],
+])
+
+myMap.forEach((value, key) => console.log(key, value))
+
+// - Conversión
+
+// Mapa a Array
+const arrayFromMap = Array.from(myMap)
+console.log(arrayFromMap)
+
+// Array a Objeto
+const objectFromMap = Object.fromEntries(myMap)
+console.log(objectFromMap)
+
+// Objeto a Mapa
+const mapFromObject = new Map(Object.entries(objectFromMap))
+console.log(mapFromObject)
