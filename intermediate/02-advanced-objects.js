@@ -31,3 +31,17 @@ programmer.greet();
 programmer.sayAge();
 console.log(person.language);
 console.log(programmer.language);
+
+// Métodos estáticos y de instancia
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function () {
+  console.log(`Hola, me llamo ${this.name}`);
+};
+
+let person1 = new Person("Felipe", 20);
+person1.greet();
