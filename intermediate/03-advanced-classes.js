@@ -55,3 +55,25 @@ console.log(cat);
 cat.makeSound();
 console.log(dog);
 dog.makeSound();
+
+// - Mixins
+
+const FlyMixin = {
+  fly() {
+    console.log(`${this.name} está volando`);
+  },
+};
+
+class Bird extends Animal {}
+class Dragon extends Animal {}
+
+Object.assign(Bird.prototype, FlyMixin);
+Object.assign(Dragon.prototype, FlyMixin);
+
+const bird = new Bird("Piolin");
+const dragon = new Dragon("Dragón");
+
+console.log(bird);
+bird.fly();
+console.log(dragon);
+dragon.fly();
