@@ -77,3 +77,20 @@ console.log(bird);
 bird.fly();
 console.log(dragon);
 dragon.fly();
+
+// - Patrón Singleton
+
+class Session {
+  constructor(name) {
+    if (Session.instance) {
+      return Session.instance;
+    }
+    this.name = name;
+    Session.instance = this;
+  }
+}
+
+const session1 = new Session("Felipe");
+const session2 = new Session("Naruto");
+console.log(session1);
+console.log(session2);
