@@ -35,3 +35,23 @@ class Animal {
 // Error
 // const animal = new Animal("Animal");
 // console.log(animal);
+
+// - Polimorfismo
+
+class Cat extends Animal {
+  makeSound() {
+    console.log("Miau");
+  }
+}
+class Dog extends Animal {
+  makeSound() {
+    console.log("Guau");
+  }
+}
+
+const cat = new Cat("Gato");
+const dog = new Dog("Perro");
+console.log(cat);
+cat.makeSound();
+console.log(dog);
+dog.makeSound();
