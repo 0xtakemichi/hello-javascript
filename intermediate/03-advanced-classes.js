@@ -118,3 +118,12 @@ user1.ID = 123;
 user1[ID] = 456;
 console.log(user1.ID);
 console.log(user1[ID]);
+
+// - instanceof
+
+class Car {}
+
+const car = new Car();
+
+console.log(car instanceof Car);
+console.log(car instanceof Object);
