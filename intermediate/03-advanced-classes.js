@@ -94,3 +94,27 @@ const session1 = new Session("Felipe");
 const session2 = new Session("Naruto");
 console.log(session1);
 console.log(session2);
+
+// - Symbol
+const ID = Symbol("id");
+// Se debe usar # hoy en dia para variables privadas
+class User {
+  constructor(name) {
+    this.name = name;
+    this[ID] = Math.random();
+  }
+  getId() {
+    return this[ID];
+  }
+}
+
+const user1 = new User("Felipe");
+console.log(user1);
+console.log(user1.ID); // undefined
+console.log(user1[ID]);
+console.log(user1.getId());
+
+user1.ID = 123;
+user1[ID] = 456;
+console.log(user1.ID);
+console.log(user1[ID]);
