@@ -127,3 +127,11 @@ const car = new Car();
 
 console.log(car instanceof Car);
 console.log(car instanceof Object);
+
+// Object.create
+// Crea un objeto que hereda del prototipo especificado
+
+const anotherCar = Object.create(Car.prototype);
+
+console.log(anotherCar instanceof Car); // true
+// anotherCar hereda de Car.prototype, aunque no fue creado con "new Car()"
