@@ -135,3 +135,36 @@ const anotherCar = Object.create(Car.prototype);
 
 console.log(anotherCar instanceof Car); // true
 // anotherCar hereda de Car.prototype, aunque no fue creado con "new Car()"
+
+// Proxy
+// Permite interceptar operaciones sobre un objeto (lectura, escritura, etc.)
+
+const proxy = {
+  get(target, property) {
+    console.log(`Se accede a la propiedad ${property}`);
+    return target[property];
+  },
+  set(target, property, value) {
+    if (property === "balance" && value < 0) {
+      throw new Error("El saldo no puede ser negativo");
+    }
+    target[property] = value;
+  },
+};
+
+class BankAccount {
+  constructor(balance) {
+    this.balance = balance;
+  }
+}
+
+// Creamos una cuenta y la envolvemos en un Proxy
+const account = new Proxy(new BankAccount(100), proxy);
+
+console.log(account.balance); // Se accede a la propiedad balance → 100
+
+account.balance = 50; // ✅ permitido
+console.log(account.balance); // Se accede a la propiedad balance → 50
+
+// Error
+// account.balance = -10; // ❌ Error: El saldo no puede ser negativo
