@@ -54,3 +54,57 @@ step1(() => {
     });
   });
 });
+
+// - Promesas
+
+const promise = new Promise((resolve, reject) => {
+  setInterval(() => {
+    const ok = true;
+    if (ok) {
+      resolve("Todo bien");
+    } else {
+      reject("Todo mal");
+    }
+  }, 4000);
+});
+promise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+console.log("Fin del programa");
+
+// - Encadenamiento de promesas
+
+function step1Promise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Paso 1 con promesa completado");
+      resolve();
+    }, 1000);
+  });
+}
+function step2Promise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Paso 2 con promesa completado");
+      resolve();
+    }, 1000);
+  });
+}
+function step3Promise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Paso 3 con promesa completado");
+      resolve();
+    }, 1000);
+  });
+}
+step1Promise()
+  .then(() => step2Promise())
+  .then(() => step3Promise())
+  .then(() => {
+    console.log("Todos los pasos completados con promesas");
+  });
