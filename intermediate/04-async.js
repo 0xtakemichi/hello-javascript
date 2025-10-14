@@ -108,3 +108,17 @@ step1Promise()
   .then(() => {
     console.log("Todos los pasos completados con promesas");
   });
+
+// - Async/Await
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function process() {
+  console.log("Inicio del proceso");
+  await wait(5000);
+  console.log("Fin del proceso");
+}
+
+process();
