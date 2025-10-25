@@ -39,7 +39,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
 
 // Uso de Async/Await
 
-async function getData() {
+async function getPosts() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     const data = await response.json();
@@ -49,4 +49,31 @@ async function getData() {
   }
 }
 
-getData();
+getPosts();
+
+// Solicitud POST
+
+async function createPost() {
+  try {
+    const newPost = {
+      userId: 1,
+      title: "Este es el titulo",
+      body: "Este es el cuerpo",
+    };
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPost),
+    });
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+createPost();
