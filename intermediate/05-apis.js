@@ -77,3 +77,16 @@ async function createPost() {
 }
 
 createPost();
+
+// Manejo de errores
+
+fetch("https://jsonplaceholder.typicode.com/icecream")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Error HTTP: ${response.status}`);
+    }
+    return response.json();
+  })
+  .catch((error) => {
+    console.log("Error: ", error);
+  });
