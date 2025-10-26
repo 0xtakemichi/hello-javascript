@@ -90,3 +90,29 @@ fetch("https://jsonplaceholder.typicode.com/icecream")
   .catch((error) => {
     console.log("Error: ", error);
   });
+
+// Métodos HTTP adicionales
+
+// - PATCH
+// - OPTIONS
+async function partialPostUpdate() {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts/9",
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title: "Este es el nuevo título" }),
+      }
+    );
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+
+partialPostUpdate();
