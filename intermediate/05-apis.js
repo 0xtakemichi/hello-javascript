@@ -133,3 +133,11 @@ async function getWeather(city) {
 }
 
 getWeather("Santiago");
+
+// Otros métodos de Autenticación y Autorización
+// - Bearer Tokens
+// - JWT
+
+// Versionado de APIs
+// - https://api.example.com/v1/resources
+// - https://api.example.com/v2/resources
