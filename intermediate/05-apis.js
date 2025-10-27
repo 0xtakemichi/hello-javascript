@@ -116,3 +116,20 @@ async function partialPostUpdate() {
 }
 
 partialPostUpdate();
+
+// Autenticación mediante API Key
+
+async function getWeather(city) {
+  const apikey = "";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+
+getWeather("Santiago");
