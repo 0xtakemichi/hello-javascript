@@ -161,3 +161,11 @@ async function getPokemon(pokemon) {
 }
 
 getPokemon("pikachu");
+
+// - Manipulación de elementos
+
+const title = document.getElementById("title");
+title.textContent = "Hola Mundo";
+
+const container = document.querySelector(".container");
+container.innerHTML = "<p>Parrafo</p>";
