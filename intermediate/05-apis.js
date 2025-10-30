@@ -161,25 +161,3 @@ async function getPokemon(pokemon) {
 }
 
 getPokemon("pikachu");
-
-// - Manipulación de elementos
-
-const title = document.getElementById("title");
-title.textContent = "Hola Mundo";
-
-const container = document.querySelector(".container");
-container.innerHTML = "<p>Parrafo</p>";
-
-// - Modificación de atributos
-
-const link = document.querySelector("a");
-const url = link.getAttribute("href");
-
-// Establecimiento del atributo
-link.setAttribute("href", "https://ejemplo.com");
-
-// Comprobación de atributo
-const hasTarget = link.hasAttribute("target");
-
-// Eliminación de atributo
-link.removeAttribute("target");
