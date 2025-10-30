@@ -38,3 +38,15 @@ const hasTarget = link.hasAttribute("target");
 
 // Eliminación de atributo
 link.removeAttribute("target");
+
+// - Interacción con clases CSS
+
+const box = document.querySelector(".box");
+box.classList.add("selected");
+box.classList.remove("box");
+box.classList.toggle("selected");
+
+const button = document.querySelector("button");
+button.style.backgroundColor = "blue";
+button.style.color = "white";
+button.style.padding = "10px";
