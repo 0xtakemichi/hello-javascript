@@ -80,3 +80,35 @@ newParagraph.remove();
 // Eliminación usando el padre
 const parent = newParagraph.parentElement;
 parent.removeChild(newParagraph);
+
+// - Elementos del DOM
+
+function msg() {
+  alert("¡Botón clickeado!");
+}
+
+const sendButton = document.querySelector("#send-button");
+sendButton.addEventListener("click", msg);
+sendButton.addEventListener("click", () => {
+  alert("¡Mensaje con arrow function!");
+});
+
+// Eventos comunes
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("El DOM ha sido cargado");
+});
+
+sendButton.addEventListener("mouseover", () => {
+  sendButton.style.backgroundColor = "red";
+});
+
+sendButton.addEventListener("mouseleave", () => {
+  sendButton.style.backgroundColor = "blue";
+});
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+  alert("Formulario enviado");
+});
