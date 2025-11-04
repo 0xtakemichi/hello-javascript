@@ -24,3 +24,12 @@ console.log(regex4.test(text2));
 const regex5 = /JavaScript/;
 console.log("Hola JavaScript".replace(regex5, "JS"));
 console.log("Contando: 1 2 3 4 5 6 7".replace(regex3, "[X]"));
+
+// exec: (retorna un array con la coincidencia)
+
+const text3 = "Contando: 1 2 3 4 5 6 7";
+console.log(regex3.exec(text3));
+
+while ((match = regex3.exec(text3)) !== null) {
+  console.log(match);
+}
